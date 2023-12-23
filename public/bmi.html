@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/bmi.css">
+    <title>Body Mass index (BMI) Calculator</title>
+</head>
+
+<body>
+    <h1>Body Mass Index Calculator</h1>
+    <div class="container">
+        <form action="/calculateBMI" method="post">
+            <label>Your Height: </label>
+            <label for="feet">Feet:</label>
+            <input type="number" id="feet" name="feet" min="0" required>
+            <label for="inch">Inch(es):</label>
+            <input type="number" id="inch" name="inch" min="0" max="11" required><br><br>
+            <label>Your Weight: </label>
+            <label for="pound">Pounds:</label>
+            <input type="number" id="pound" name="pound" min="0" required><br><br>
+            <input type="submit" value="Calculate">
+        </form>
+    </div>
+
+    <div class="result-container">
+        <div id="result"></div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <td>Underweight</td>
+                <td>&lt; 18.5</td>
+            </tr>
+            <tr>
+                <td>Normal weight</td>
+                <td>18.5 - 24.9</td>
+            </tr>
+            <tr>
+                <td>Overweight</td>
+                <td>25 - 29.9</td>
+            </tr>
+            <tr>
+                <td>Obesity</td>
+                <td>30 or greater</td>
+            </tr>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Results</title>
+
+    <link rel="stylesheet" type="text/css" href="/styles/result.css">
+</head>
+
+<body>
+    <div class="result-container">
+        <h1>BMI Results</h1>
+        <p>Your Height: <%= height %></p>
+        <p>Your Weight: <%= weight %></p>
+        <p>Your BMI: <%= bmi %></p>
+        <p>Classification: <%= classification %></p>    
+    </div>
+    <div class="form-container">
+        <form action="/history" method="get">
+            <button type="submit">View BMI History</button>
+        </form>
+    </div>
+</body>
+
+</html>

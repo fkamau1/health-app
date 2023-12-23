@@ -1,0 +1,36 @@
+version: '3'
+networks:
+  health-app-network:
+    driver: bridge
+
+services:
+  health-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: "mongodb://mongo:27017/bmiDB"  
+    networks:
+      - health-app-network
+  mongodb:
+    image: mongo
+    ports:
+    - 27017:27017
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=bmiUser
+    - MONGO_INITDB_ROOT_PASSWORD=password          
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+    - ME_CONFIG_MONGODB_ADMINUSERNAME=bmiUser
+    - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+    - ME_CONFIG_MONGODB_SERVER=mongodb        
+  
+   
+

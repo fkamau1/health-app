@@ -1,0 +1,35 @@
+<!-- views/history.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI History</title>
+    <link rel="stylesheet" type="text/css" href="/styles/history.css">
+</head>
+
+<body>
+    <h1>BMI History</h1>
+    <table>
+        <tr>
+            <!--<th>Name</th>-->
+            <th>Height</th>
+            <th>Weight</th>
+            <th>BMI</th>
+            <th>Classification</th>
+        </tr>
+        <% for (let entry of history) { %>
+            <tr>
+                <!--<td><%= entry.name %></td>-->
+                <td><%= entry.height %></td>
+                <td><%= entry.weight %></td>
+                <td><%= entry.bmi %></td>
+                <td><%= entry.classification %></td>
+            </tr>
+        <% } %>
+    </table>    
+</body>
+
+</html>
